@@ -25,6 +25,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'jpo/vim-railscasts-theme.git'
 Bundle 'bling/vim-airline'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'SirVer/ultisnips'
+
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
 

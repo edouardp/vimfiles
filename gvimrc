@@ -29,6 +29,7 @@ if has("gui")
   endif
   if has("unix")
     set lines=59
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
   endif
 endif
 
