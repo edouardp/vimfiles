@@ -26,6 +26,8 @@ Bundle 'jpo/vim-railscasts-theme.git'
 Bundle 'bling/vim-airline'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'SirVer/ultisnips'
+Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'Valloric/YouCompleteMe'
 
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
