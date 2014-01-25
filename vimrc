@@ -41,7 +41,7 @@ if has("win32")
   set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
 endif
 if has("unix")
-  set viminfo='0,:1000,/50,h
+  set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
 endif
 
 " Incremental Search on
