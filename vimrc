@@ -28,6 +28,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+
 
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
