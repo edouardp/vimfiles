@@ -5,7 +5,6 @@ set fillchars=vert:\ ,fold:-
 
 " set the X11 font to use
 if has("gui_win32")
-  #set guifont=Lucida_Console:h11
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
   set nowrap
   set columns=160
@@ -175,6 +174,13 @@ highlight DiffText    gui=NONE    guifg=DarkGray      guibg=Yellow
 
 endif
 
+
+amenu Fonts.Anonymous\ Pro :set guifont=Anonymous\ Pro\ for\ Powerline:h14<CR>
+amenu Fonts.DejaVu\ Sans\ Mono :set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12<CR>
+amenu Fonts.Droid\ Sans\ Mono :set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12<CR>
+amenu Fonts.Inconsolata :set guifont=Inconsolata\ for\ Powerline:h13<CR>
+amenu Fonts.Source\ Code\ Pro :set guifont=Source\ Code\ Pro\ for\ Powerline:h11<CR>
+amenu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14<CR>
 
 
 

@@ -20,17 +20,21 @@ Bundle 'gmarik/vundle'
 
 " -- My bundles --------------------------------------------------------------
 
-" original repos on GitHub
+" Original repos on GitHub
 Bundle 'tpope/vim-fugitive'
-Bundle 'jpo/vim-railscasts-theme.git'
+Bundle 'edouardp/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
 Bundle 'kien/tabman.vim'
+Bundle 'PProvost/vim-ps1'
+Bundle 'majutsushi/tagbar'
+
+if !has("gui_win32")        " Not supported on Windows out of the box
+Bundle 'Valloric/YouCompleteMe'
+endif
 
 
 
@@ -43,12 +47,8 @@ filetype plugin indent on     " required!
 
 " Viminfo
 set history=1000
-if has("win32")
-  set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
-endif
-if has("unix")
-  set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
-endif
+set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
+set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
 
 " Incremental Search on
 set incsearch
@@ -81,11 +81,19 @@ inoremap <Up> <C-R>=pumvisible() ? "\<lt>C-P>" : "\<lt>Up>"<CR>
 inoremap <Down> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>Down>"<CR>
 
 " Always enable fold column (and make space for it)
-set columns=84
+"set columns=84
 set foldcolumn=4
 
 " Colourscheme
 colorscheme railscasts
+
+" Tagbar
+let g:tagbar_ctags_bin = "c:\\Users\\edouardp.ZEACOMDEV\\bin\\ctags.exe"
+let g:tagbar_iconchars = ['▶', '▼']
+
+
+" NERDTree
+let NERDTreeDirArrows=1
 
 " Stat in home dir
 cd ~
