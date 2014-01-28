@@ -29,6 +29,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'kien/tabman.vim'
 
 
 
@@ -103,4 +105,7 @@ let g:airline_symbols.linenr = ''
 
 let g:airline_powerline_fonts = 1 
 set encoding=utf-8
+
+let g:tagbar_ctags_bin = /usr/local/bin/ctags
+
 
