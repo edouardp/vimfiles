@@ -5,7 +5,6 @@ set fillchars=vert:\ ,fold:-
 
 " set the X11 font to use
 if has("gui_win32")
-  #set guifont=Lucida_Console:h11
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
   set nowrap
   set columns=160
