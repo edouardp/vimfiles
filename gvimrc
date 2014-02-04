@@ -86,6 +86,7 @@ let line = escape (line, "#?&;|%")
 exec '!start C:\Users\edouardp.ZEACOMDEV\AppData\Local\Google\Chrome\Application\chrome.exe '.line
 endfunction
 
+if 0
 " Set a nicer foldtext function
 set foldtext=MyFoldText()
 function! MyFoldText()
@@ -126,6 +127,7 @@ let fold_w = getwinvar( 0, '&foldcolumn' )
 let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w )
 return sub . info
 endfunction
+endif
 
 
 
@@ -244,8 +246,13 @@ inoremap <M-/> <C-R>=strftime("%Y-%m-%d: ")<CR>
 
 
 " Quicker fold open/close mapping
-map <M-Right> zo
-map <M-Left> zc
+if has('mac')
+    map <D-Right> zo
+    map <D-Left> zc
+else
+    map <M-Right> zo
+    map <M-Left> zc
+endif
 
 
 " Shortcut for OmniCompletion

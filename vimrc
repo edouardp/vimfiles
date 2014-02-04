@@ -31,6 +31,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/tabman.vim'
 Bundle 'PProvost/vim-ps1'
 Bundle 'majutsushi/tagbar'
+Bundle 'edouardp/folde'
+Bundle 'tpope/vim-characterize'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
@@ -91,6 +93,27 @@ colorscheme railscasts
 let g:tagbar_ctags_bin = "c:\\Users\\edouardp.ZEACOMDEV\\bin\\ctags.exe"
 let g:tagbar_iconchars = ['▶', '▼']
 
+" UltiSnips/YouCompleteMe integration
+function! g:UltiSnips_Complete()
+    call UltiSnips_ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips_JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+
+
 
 " NERDTree
 let NERDTreeDirArrows=1
@@ -114,6 +137,6 @@ let g:airline_symbols.linenr = ''
 let g:airline_powerline_fonts = 1 
 set encoding=utf-8
 
-let g:tagbar_ctags_bin = /usr/local/bin/ctags
+let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
 
 
