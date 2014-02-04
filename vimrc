@@ -48,7 +48,6 @@ filetype plugin indent on     " required!
 " Viminfo
 set history=1000
 set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
-set viminfo='0,:1000,/50,h,n~/vimfiles/_viminfo
 
 " Incremental Search on
 set incsearch
@@ -88,7 +87,12 @@ set foldcolumn=4
 colorscheme railscasts
 
 " Tagbar
-let g:tagbar_ctags_bin = "c:\\Users\\edouardp.ZEACOMDEV\\bin\\ctags.exe"
+
+if has("gui_win32")         " Binaries live in different places for now
+  let g:tagbar_ctags_bin = expand('~/bin/ctags.exe')
+else
+  let g:tagbar_ctags_bin = /usr/local/bin/ctags
+endif
 let g:tagbar_iconchars = ['▶', '▼']
 
 
@@ -98,6 +102,8 @@ let NERDTreeDirArrows=1
 " Stat in home dir
 cd ~
 
+let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition', 'm:method', 'v:variable', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-ps1.cnf') }
+let g:tagbar_type_xml = { 'ctagstype' : 'XML', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-PatternLibrary.cnf') }
 
 " powerline symbols
 if !exists('g:airline_symbols')
@@ -114,6 +120,5 @@ let g:airline_symbols.linenr = ''
 let g:airline_powerline_fonts = 1 
 set encoding=utf-8
 
-let g:tagbar_ctags_bin = /usr/local/bin/ctags
 
 
