@@ -31,6 +31,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/tabman.vim'
 Bundle 'PProvost/vim-ps1'
 Bundle 'majutsushi/tagbar'
+Bundle 'kien/ctrlp.vim'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
