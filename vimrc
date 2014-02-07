@@ -89,14 +89,15 @@ set foldcolumn=4
 " Colourscheme
 colorscheme railscasts
 
-" Tagbar
 
+" Tagbar Customisation
 if has("gui_win32")         " Binaries live in different places for now
   let g:tagbar_ctags_bin = expand('~/bin/ctags.exe')
 else
   let g:tagbar_ctags_bin = /usr/local/bin/ctags
 endif
 let g:tagbar_iconchars = ['▶', '▼']
+
 
 " UltiSnips/YouCompleteMe integration
 function! g:UltiSnips_Complete()
@@ -119,14 +120,19 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
 
 
+" Ctrl-P Customisation
+let g:ctrlp_max_files=0
+let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
+
 
 " NERDTree
 let NERDTreeDirArrows=1
 
+
 " Stat in home dir
 cd ~
 
-let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition', 'm:method', 'v:variable', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-ps1.cnf') }
+let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-ps1.cnf') }
 let g:tagbar_type_xml = { 'ctagstype' : 'XML', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-PatternLibrary.cnf') }
 
 " powerline symbols
