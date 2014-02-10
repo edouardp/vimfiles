@@ -34,6 +34,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'edouardp/folde'
 Bundle 'tpope/vim-characterize'
+Bundle 'edouardp/ps1-ultisnips'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
