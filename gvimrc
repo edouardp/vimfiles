@@ -274,9 +274,13 @@ inoremap <M-/> <C-R>=strftime("%Y-%m-%d: ")<CR>
 if has('mac')
     map <D-Right> zo
     map <D-Left> zc
+    map <D-S-Left> zM
+    map <D-S-Right> zR
 else
     map <M-Right> zo
     map <M-Left> zc
+    map <M-S-Left> zM
+    map <M-S-Right> zR
 endif
 
 

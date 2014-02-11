@@ -136,6 +136,10 @@ cd ~
 let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-ps1.cnf') }
 let g:tagbar_type_xml = { 'ctagstype' : 'XML', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-PatternLibrary.cnf') }
 
+
+" Airline Customisation
+let g:airline_theme='light'
+
 " powerline symbols
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -150,4 +154,8 @@ let g:airline_symbols.linenr = ''
 
 let g:airline_powerline_fonts = 1 
 set encoding=utf-8
+
+
+" Folde Customisation
+let g:folde_style='simple'
 
