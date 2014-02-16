@@ -1,9 +1,9 @@
-" 
+"
 "  Edouard Poor's global .vimrc file
 "
 "  Modified:      Wed Jun 26 10:16:31 NZST 1996
 "  Last modified: Fri Jan 24 13:33:45 NZDT 2013
-" 
+"
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
 
@@ -35,11 +35,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'edouardp/folde'
 Bundle 'tpope/vim-characterize'
 Bundle 'edouardp/ps1-ultisnips'
+Bundle 'mbbill/undotree'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
 endif
-
 
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
@@ -137,6 +137,12 @@ let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition'
 let g:tagbar_type_xml = { 'ctagstype' : 'XML', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-PatternLibrary.cnf') }
 
 
+" UndoTree Customisation
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 2
+endif
+
+
 " Airline Customisation
 let g:airline_theme='light'
 
@@ -152,10 +158,12 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 set encoding=utf-8
 
 
 " Folde Customisation
-let g:folde_style='simple'
+" Choose a style at startup
+FoldeStyle powerline
+
 
