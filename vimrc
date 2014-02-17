@@ -36,6 +36,8 @@ Bundle 'edouardp/folde'
 Bundle 'tpope/vim-characterize'
 Bundle 'edouardp/ps1-ultisnips'
 Bundle 'mbbill/undotree'
+Bundle 'jacquesbh/vim-showmarks'
+Bundle 'vlmarek/ConqueVlad'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
