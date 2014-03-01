@@ -51,7 +51,7 @@ set hlsearch
 " Turn off the buffers menu... (5.5 and above?)
 let no_buffers_menu = 1
 
-set go-=t
+"set go-=t
 
 " Mappings for VIM in GUI mode
 map <D-Down> :cn<CR>
@@ -295,9 +295,13 @@ if has("gui_macvim")
   set fuoptions=maxvert
 
   " Cheese
-  set transparency=5
+  set transparency=3
 endif
 
 " Have to set the background here?
 set background=dark
 
+
+" Call the ttbar script/plugin
+source ~/vimfiles/bundle/ttbar/ttbar.vim
+set go=egmTLr
