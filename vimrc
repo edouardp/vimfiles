@@ -38,6 +38,8 @@ Bundle 'edouardp/ps1-ultisnips'
 Bundle 'mbbill/undotree'
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'vlmarek/ConqueVlad'
+Bundle 'istepura/vim-toolbar-icons-silk'
+Bundle 'airblade/vim-gitgutter'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
@@ -166,6 +168,33 @@ set encoding=utf-8
 
 " Folde Customisation
 " Choose a style at startup
-FoldeStyle powerline
+"FoldeStyle powerline
+
+" Toggle Toolbar Command Playing
+function! g:Toggle_Toolbar()
+    if !exists('g:toolbar_state')
+        let g:toolbar_state = 2
+    endif
+    aunmenu ToolBar.Blort
+    if g:toolbar_state == 1
+        let g:toolbar_state = 2
+        amenu icon=Undo 999 ToolBar.Blort :call g:Toggle_Toolbar()<CR>
+        set cursorline
+        set cursorcolumn
+        echo "On"
+    else
+        let g:toolbar_state = 1
+        amenu icon=Redo 999 ToolBar.Blort :call g:Toggle_Toolbar()<CR>
+        set nocursorline
+        set nocursorcolumn
+        echo "Off"
+    endif
+endfunction
+
+let g:toolbar_state = 2
+amenu icon=Undo 999 ToolBar.Blort :call g:Toggle_Toolbar()<CR>
+
+" ¶ ˽
+"
 
 

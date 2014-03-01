@@ -212,8 +212,8 @@ amenu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14<CR
 
 
 amenu Tools.-SEP90- :
-amenu Tools.Show\ Hidden\ Characters :set lcs-=eol:$<CR>:set isprint=<CR>:syn match blort "[^[:print:]]"<CR>:hi link blort NonText<CR>:set list<CR>
-amenu Tools.Show\ Hidden\ Characters\ (inc\ EOL) :set lcs+=eol:$<CR>:set isprint=<CR>:syn match blort "[^[:print:]]"<CR>:hi link blort NonText<CR>:set list<CR>
+amenu Tools.Show\ Hidden\ Characters :set lcs-=eol:¶<CR>:set isprint=<CR>:syn match blort "[^[:print:]]"<CR>:hi link blort NonText<CR>:set list<CR>
+amenu Tools.Show\ Hidden\ Characters\ (inc\ EOL) :set lcs+=eol:¶<CR>:set isprint=<CR>:syn match blort "[^[:print:]]"<CR>:hi link blort NonText<CR>:set list<CR>
 amenu Tools.Hide\ Hidden\ Characters :syn clear blort<CR>:set isprint=@,~-159,161-255<CR>:set nolist<CR>
 amenu Tools.-SEP100- :
 amenu Tools.Clear\ Last\ Search\ Highlight :nohlsearch<CR>
