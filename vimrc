@@ -41,7 +41,7 @@ Bundle 'vlmarek/ConqueVlad'
 Bundle 'istepura/vim-toolbar-icons-silk'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edouardp/ttbar'
-Bundle 'vim-scripts/ZoomWin'
+Bundle 'dr-chip-vim-scripts/ZoomWin'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
