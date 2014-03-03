@@ -187,6 +187,11 @@ else
   let g:gitgutter_sign_modified_removed = '•̲_'
 endif
 
+highlight GitGutterAdd          guifg=Green  guibg=#353535
+highlight GitGutterChange       guifg=Orange guibg=#353535
+highlight GitGutterDelete       guifg=Red    guibg=#353535
+highlight GitGutterChangeDelete guifg=Orange guibg=#353535
+
 
 " Virtualenv Support
 let g:virtualenv_directory = '~/py'
