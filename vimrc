@@ -42,7 +42,8 @@ Bundle 'istepura/vim-toolbar-icons-silk'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edouardp/ttbar'
 Bundle 'dr-chip-vim-scripts/ZoomWin'
-Bundle 'jeetsukumaran / vim-buffergator'
+Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'jmcantrell/vim-virtualenv'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
@@ -172,4 +173,9 @@ set encoding=utf-8
 " Folde Customisation
 " Choose a style at startup
 "FoldeStyle powerline
+
+
+" Virtualenv Support
+let g:virtualenv_directory = '~/py'
+let g:airline#extensions#virtualenv#enabled = 1
 
