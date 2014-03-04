@@ -124,9 +124,10 @@ function! g:UltiSnips_Complete()
     return ""
 endfunction
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
+" Disabled for now
+"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsListSnippets="<c-e>"
 
 
 " Ctrl-P Customisation
@@ -177,20 +178,21 @@ set encoding=utf-8
 
 " Git Gutter Customisation
 "
-let g:gitgutter_sign_added = '+ '
-let g:gitgutter_sign_removed = '_ '
+let g:gitgutter_sign_added              = '+ '
+let g:gitgutter_sign_removed            = '_ '
 if has("gui_macvim")
-  let g:gitgutter_sign_modified = '◦ '
+  let g:gitgutter_sign_modified         = '◦ '
   let g:gitgutter_sign_modified_removed = '⍛ '
 else
-  let g:gitgutter_sign_modified = '• '
-  let g:gitgutter_sign_modified_removed = '•̲_'
+  let g:gitgutter_sign_modified         = '• '
+  let g:gitgutter_sign_modified_removed = '•̲ '
 endif
 
+" I think this needs moving to the vim-railscast theme
 highlight GitGutterAdd          guifg=Green  guibg=#353535
 highlight GitGutterChange       guifg=Orange guibg=#353535
 highlight GitGutterDelete       guifg=Red    guibg=#353535
-highlight GitGutterChangeDelete guifg=Orange guibg=#353535
+highlight GitGutterChangeDelete guifg=Red    guibg=#353535
 
 
 " Virtualenv Support
