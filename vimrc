@@ -172,7 +172,7 @@ set encoding=utf-8
 
 
 " Folde Customisation
-" Choose a style at startup
+" 
 let g:folde_style = 'simple'
 
 
@@ -187,12 +187,6 @@ else
   let g:gitgutter_sign_modified         = '• '
   let g:gitgutter_sign_modified_removed = '•̲ '
 endif
-
-" I think this needs moving to the vim-railscast theme
-highlight GitGutterAdd          guifg=Green  guibg=#353535
-highlight GitGutterChange       guifg=Orange guibg=#353535
-highlight GitGutterDelete       guifg=Red    guibg=#353535
-highlight GitGutterChangeDelete guifg=Red    guibg=#353535
 
 
 " Virtualenv Support
