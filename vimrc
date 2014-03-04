@@ -172,7 +172,7 @@ set encoding=utf-8
 
 
 " Folde Customisation
-" 
+"
 let g:folde_style = 'simple'
 
 
