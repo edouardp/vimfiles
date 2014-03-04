@@ -173,7 +173,7 @@ set encoding=utf-8
 
 " Folde Customisation
 " Choose a style at startup
-" FoldeStyle powerline
+let g:folde_style = 'simple'
 
 
 " Git Gutter Customisation
