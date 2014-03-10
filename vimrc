@@ -99,6 +99,10 @@ set foldcolumn=4
 colorscheme railscasts
 
 
+" Updatetime (for things like Git Gutter)
+set updatetime=900
+
+
 " Tagbar Customisation
 if has("gui_win32")         " Binaries live in different places for now
   let g:tagbar_ctags_bin = expand('~/bin/ctags.exe')
