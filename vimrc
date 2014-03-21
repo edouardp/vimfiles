@@ -44,6 +44,7 @@ Bundle 'edouardp/ttbar'
 Bundle 'dr-chip-vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'edouardp/arrowmapper'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
