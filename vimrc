@@ -44,6 +44,9 @@ Bundle 'edouardp/ttbar'
 Bundle 'dr-chip-vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'ivanov/vim-ipython'
+Bundle 'edouardp/arrowmapper'
+Bundle 'qstrahl/vim-matchmaker'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
@@ -173,7 +176,7 @@ set encoding=utf-8
 
 " Folde Customisation
 "
-let g:folde_style = 'simple'
+let g:folde_style = 'fancy'
 
 
 " Git Gutter Customisation
