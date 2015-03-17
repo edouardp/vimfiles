@@ -14,7 +14,7 @@ if has("gui_gnome")
   "set guifont=fixed
   set guifont=Luxi\ Mono\ 10
 endif
-if has("xgui_macvim")
+if has("gui_macvim")
   set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
 endif
 
