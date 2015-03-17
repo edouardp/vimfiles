@@ -5,7 +5,7 @@ set fillchars=vert:\ ,fold:-
 
 " set the X11 font to use
 if has("gui_win32")
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
   set nowrap
   set columns=160
   map <M-m> :simalt ~x<CR>
@@ -13,6 +13,9 @@ endif
 if has("gui_gnome")
   "set guifont=fixed
   set guifont=Luxi\ Mono\ 10
+endif
+if has("xgui_macvim")
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
 endif
 
 " Make command line two lines high
@@ -28,7 +31,6 @@ if has("gui")
   endif
   if has("unix")
     set lines=59
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
   endif
 endif
 
