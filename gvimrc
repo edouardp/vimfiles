@@ -242,20 +242,17 @@ amenu PopUp.RGrep\ Source :grep -r <cword> *<CR><CR>:cw<CR>
 amenu PopUp.FindGrep\ Source :grep -r <cword> `find . -name "*.[ch]*"`<CR><CR>:cw<CR>
 amenu PopUp.Grep\ All\ Source :set grepprg=zgrep<CR>:silent grep -F <cword> ~/zzz.gz<CR>:cw<CR>:set grepprg=grep\ -nH<CR>
 amenu PopUp.NTiTy\ Grep :set grepprg=/Users/edouardp.ZEACOMDEV/bin/busybox.exe\ sh\ grepdb.sh<CR>:silent grep <cword><CR>:cw<CR>:let @/='<cword>'<CR>:set hls<CR>:set grepprg=grep\ -nH<CR>
-amenu PopUp.Goto\ Tag g<C-]>
-amenu PopUp.Split-Tag <C-W><C-]>
-amenu PopUp.Split-Def <C-W><Tab>
-amenu PopUp.-SEP90- :
-amenu PopUp.Open\ File gf
-amenu PopUp.Split-File <C-W>f
 amenu PopUp.-SEP91- :
 amenu PopUp.Comment\ block :'<,'>s@^@//@<CR>:nohls<CR>
                " Needs a :nohls because vim thinks the ^ is a search to highlight...
 amenu PopUp.-SEP92- :
-amenu PopUp.cd\ to\ this\ file :cd %:p:h<CR>
 amenu PopUp.Open\ Browser :call Browser()<CR>
+amenu PopUp.-SEP93- :
+amenu PopUp.cd\ to\ this\ file :cd %:p:h<CR>
 amenu PopUp.explore\ pwd :silent !start "`pwd`"<CR>
 amenu PopUp.explore\ file :silent !explorer.exe %:p:h<CR>
+amenu PopUp.Open\ in\ NERDTree :NERDTreeFind<CR>
+amenu PopUp.-SEP94- :
 amenu PopUp.terminal\ on\ pwd :silent !osascript -e "tell application \"Terminal\" to activate" -e "tell application \"Terminal\" to do script \"cd `pwd`\""<CR>
 amenu PopUp.terminal\ on\ file\ dir :silent !osascript -e "tell application \"Terminal\" to activate" -e "tell application \"Terminal\" to do script \"cd '%:p:h'\""<CR>
 
