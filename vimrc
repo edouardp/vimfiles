@@ -2,7 +2,7 @@
 "  Edouard Poor's global .vimrc file
 "
 "  Modified:      Wed Jun 26 10:16:31 NZST 1996
-"  Last modified: Fri Jan 24 13:33:45 NZDT 2013
+"  Last modified: Fri Mar 17 23:54:45 NZDT 2015
 "
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
@@ -47,6 +47,8 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'ivanov/vim-ipython'
 Bundle 'edouardp/arrowmapper'
 Bundle 'qstrahl/vim-matchmaker'
+Bundle 'natw/keyboard_cat.vim'
+Bundle 'edouardp/scorsese'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
@@ -180,14 +182,14 @@ set encoding=utf-8
 
 " Folde Customisation
 "
-let g:folde_style = 'fancy'
+let g:folde_style = 'simple'
 
 
 " Git Gutter Customisation
 "
 let g:gitgutter_sign_added              = '+ '
 let g:gitgutter_sign_removed            = '_ '
-if has("gui_macvim")
+if has("xgui_macvim")
   let g:gitgutter_sign_modified         = '◦ '
   let g:gitgutter_sign_modified_removed = '⍛ '
 else
