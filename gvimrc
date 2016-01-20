@@ -1,4 +1,8 @@
-" Vim
+"
+"  gvimrc file
+"
+"
+"
 
 "vertical seperator fill char
 set fillchars=vert:\ ,fold:-
@@ -85,7 +89,8 @@ let line = escape (line, "#?&;|%")
 ":if line==""
 " let line = "\"" . (expand("%:p")) . "\""
 ":endif
-exec '!start C:\Users\edouardp.ZEACOMDEV\AppData\Local\Google\Chrome\Application\chrome.exe '.line
+exec '!start C:\Program Files (x86)\Google\Chrome\Application\chrome.exe '.line
+
 endfunction
 
 if 0
