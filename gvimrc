@@ -290,10 +290,11 @@ if has("gui_macvim")
   map <D-y> :macaction performZoom:<CR>
 
   " Fullscreen options
-  set fuoptions=maxvert
+  set fuoptions=maxvert,maxhorz
 
   " Cheese
-  set transparency=3
+  set transparency=5
+  set blurradius=16
 endif
 
 " Have to set the background here?
@@ -303,3 +304,21 @@ set background=dark
 " Call the ttbar script/plugin
 source ~/vimfiles/bundle/ttbar/ttbar.vim
 set go=egmTLr
+
+" 
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"    
+"
+"

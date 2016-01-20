@@ -50,6 +50,9 @@ Bundle 'qstrahl/vim-matchmaker'
 Bundle 'natw/keyboard_cat.vim'
 Bundle 'edouardp/scorsese'
 
+" Try out ShellAsync
+Bundle 'troydm/shellasync.vim'
+
 if !has("gui_win32")        " Not supported on Windows out of the box
 Bundle 'Valloric/YouCompleteMe'
 endif
@@ -91,6 +94,9 @@ set fillchars=fold:-
 
 " Insert current date
 inoremap <D-/> <C-R>=strftime("%Y/%m/%d: ")<CR>
+inoremap <D-÷> <C-R>=strftime("%H:%M:%S ")<CR>
+"inoremap <D-¿> <C-R>=strftime("%a %b %m %H:%M:%S %Z %Y")<CR>
+inoremap <D-¿> <C-R>=strftime("%+")<CR>
 
 " up/down key support for completion menu
 inoremap <Up> <C-R>=pumvisible() ? "\<lt>C-P>" : "\<lt>Up>"<CR>
@@ -112,9 +118,9 @@ set updatetime=900
 if has("gui_win32")         " Binaries live in different places for now
   let g:tagbar_ctags_bin = expand('~/bin/ctags.exe')
 else
-  let g:tagbar_ctags_bin = /usr/local/bin/ctags
+  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 endif
-let g:tagbar_iconchars = ['▶', '▼']
+let g:tagbar_iconchars = ['▸','▾']
 
 
 " UltiSnips/YouCompleteMe integration
@@ -164,6 +170,9 @@ endif
 " Airline Customisation
 let g:airline_theme='light'
 
+" Airline Hunks Customisation
+let g:airline#extensions#hunks#hunk_symbols = ['+', '●', '-']
+
 " powerline symbols
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -187,14 +196,22 @@ let g:folde_style = 'simple'
 
 " Git Gutter Customisation
 "
+let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_added              = '+ '
 let g:gitgutter_sign_removed            = '_ '
-if has("xgui_macvim")
-  let g:gitgutter_sign_modified         = '◦ '
-  let g:gitgutter_sign_modified_removed = '⍛ '
+if has("gui_macvim")
+  " let g:gitgutter_sign_modified         = '◦ '
+  " let g:gitgutter_sign_modified_removed = '⍛ '
+  " let g:gitgutter_sign_modified         = '◇ '
+  " let g:gitgutter_sign_modified_removed = '⍚ '
+  let g:gitgutter_sign_modified         = '● '
+  "let g:gitgutter_sign_modified_removed = '●-'
+  let g:gitgutter_sign_modified_removed = '●—'
 else
-  let g:gitgutter_sign_modified         = '• '
-  let g:gitgutter_sign_modified_removed = '•̲ '
+  let g:gitgutter_sign_modified         = '● '
+  let g:gitgutter_sign_modified_removed = '● '
+  " let g:gitgutter_sign_modified         = '• '
+  " let g:gitgutter_sign_modified_removed = '•̲ '
 endif
 
 
