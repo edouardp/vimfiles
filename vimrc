@@ -22,8 +22,10 @@ Bundle 'gmarik/vundle'
 
 " Original repos on GitHub
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 Bundle 'edouardp/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
@@ -49,12 +51,11 @@ Bundle 'edouardp/arrowmapper'
 Bundle 'qstrahl/vim-matchmaker'
 Bundle 'natw/keyboard_cat.vim'
 Bundle 'edouardp/scorsese'
-
-" Try out ShellAsync
-Bundle 'troydm/shellasync.vim'
+"Bundle 'ramele/agrep'
+Bundle 'kshenoy/vim-signature'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 endif
 
 

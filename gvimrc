@@ -109,7 +109,7 @@ let line = getline(v:foldstart)
 "     sub = 'XXX'
 " else if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
 "     let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
-"     
+"
 "     let linenum = v:foldstart + 1
 "     while linenum < v:foldend
 "         let line = getline( linenum )
@@ -144,14 +144,14 @@ let sub = substitute( lines, '\s\{-}\(<#\).*\.[Ss][Yy][Nn][Oo][Pp][Ss][Ii][Ss]\_
 "                                                                                     word character
 "                                                                                         Anything but NUL
 "                                                                                                anything
-"                                                                             
+"
 if sub == lines
   let sub = line
 endif
 "let sub = lines
 
 let n = v:foldend - v:foldstart + 1
-let info = "   " . n . " lines " 
+let info = "   " . n . " lines "
 let sub = sub . repeat(' ', 120)
 
 let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
@@ -172,7 +172,7 @@ highlight LineNr      gui=NONE    guifg=grey60     guibg=Grey90
 
 "
 " Boy. Don't let programmers set colours.
-" 
+"
 " These are fixed to be almost pleasent. I've gone
 " completely overboard with that subtlety thing...
 "
@@ -201,20 +201,32 @@ highlight Error       gui=bold    guifg=White      guibg=red4
 highlight Pmenu       gui=NONE    guifg=White      guibg=Gray
 highlight PmenuSel    gui=NONE    guifg=Black      guibg=LightGray
 
-highlight DiffAdd	    gui=NONE    guifg=Black      guibg=LightBlue 
-highlight DiffChange  gui=NONE    guifg=Black      guibg=LightGreen 
-highlight DiffDelete  gui=NONE    guifg=Pink       guibg=LightPink 
-highlight DiffText    gui=NONE    guifg=DarkGray      guibg=Yellow 
+highlight DiffAdd     gui=NONE    guifg=Black      guibg=LightBlue
+highlight DiffChange  gui=NONE    guifg=Black      guibg=LightGreen
+highlight DiffDelete  gui=NONE    guifg=Pink       guibg=LightPink
 
 endif
 
 
-amenu Fonts.Anonymous\ Pro :set guifont=Anonymous\ Pro\ for\ Powerline:h14<CR>
-amenu Fonts.DejaVu\ Sans\ Mono :set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12<CR>
-amenu Fonts.Droid\ Sans\ Mono :set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12<CR>
-amenu Fonts.Inconsolata :set guifont=Inconsolata\ for\ Powerline:h13<CR>
-amenu Fonts.Source\ Code\ Pro :set guifont=Source\ Code\ Pro\ for\ Powerline:h11<CR>
-amenu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14<CR>
+" Font Menu
+"
+amenu Fonts.Anonymous\ Pro                 :set guifont=Anonymous\ Pro\ for\ Powerline:h14<CR>
+amenu Fonts.Cousine                        :set guifont=Cousine\ for\ Powerline:h14<CR>
+amenu Fonts.DejaVu\ Sans\ Mono             :set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12<CR>
+amenu Fonts.Droid\ Sans\ Mono              :set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12<CR>
+amenu Fonts.Droid\ Sans\ Mono\ Dotted      :set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h12<CR>
+amenu Fonts.Droid\ Sans\ Mono\ Slashed     :set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h12<CR>
+amenu Fonts.Fira\ Mono                     :set guifont=Fira\ Mono\ for\ Powerline:h13<CR>
+amenu Fonts.Fira\ Mono\ Medium             :set guifont=Fira\ Mono\ Medium\ for\ Powerline:h13<CR>
+amenu Fonts.Hack                           :set guifont=Hack:h13<CR>
+amenu Fonts.Inconsolata                    :set guifont=Inconsolata\ for\ Powerline:h13<CR>
+amenu Fonts.Input\ Mono                    :set guifont=Input\ Mono:h13<CR>
+amenu Fonts.Liberation\ Mono               :set guifont=Liberation\ Mono\ for\ Powerline:h13<CR>
+amenu Fonts.Meslo\ LG\ L                   :set guifont=Meslo\ LG\ L\ for\ Powerline:h13<CR>
+amenu Fonts.Monofur                        :set guifont=monofur\ for\ Powerline:h14<CR>
+amenu Fonts.Roboto\ Mono                   :set guifont=Roboto\ Mono\ for\ Powerline:h13<CR>
+amenu Fonts.Source\ Code\ Pro              :set guifont=Source\ Code\ Pro\ for\ Powerline:h11<CR>
+amenu Fonts.Ubuntu\ Mono                   :set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14<CR>
 
 
 
@@ -310,20 +322,20 @@ set background=dark
 source ~/vimfiles/bundle/ttbar/ttbar.vim
 set go=egmTLr
 
-" 
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
-"    
+"
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
+"   
 "
 "
