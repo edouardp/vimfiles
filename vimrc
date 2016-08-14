@@ -51,7 +51,7 @@ Bundle 'edouardp/arrowmapper'
 Bundle 'qstrahl/vim-matchmaker'
 Bundle 'natw/keyboard_cat.vim'
 Bundle 'edouardp/scorsese'
-"Bundle 'ramele/agrep'
+Bundle 'ramele/agrep'
 Bundle 'kshenoy/vim-signature'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
@@ -109,6 +109,9 @@ set foldcolumn=4
 
 " Colourscheme
 colorscheme railscasts
+
+" gx command selects word (including ?query=blah part)
+let g:netrw_gx="<cWORD>"
 
 
 " Updatetime (for things like Git Gutter)
