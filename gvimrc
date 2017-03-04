@@ -16,7 +16,8 @@ if has("gui_win32")
 endif
 if has("gui_gnome")
   "set guifont=fixed
-  set guifont=Luxi\ Mono\ 10
+  "set guifont=Luxi\ Mono\ 10
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 if has("gui_macvim")
   set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
@@ -321,6 +322,16 @@ set background=dark
 " Call the ttbar script/plugin
 source ~/vimfiles/bundle/ttbar/ttbar.vim
 set go=egmTLr
+
+" Set large toolbar size for Gnome
+"
+if has("gui")
+  if has("unix")
+    set toolbariconsize=large
+  endif
+endif
+
+
 
 "
 "   

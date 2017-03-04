@@ -51,7 +51,9 @@ Bundle 'edouardp/arrowmapper'
 Bundle 'qstrahl/vim-matchmaker'
 Bundle 'natw/keyboard_cat.vim'
 Bundle 'edouardp/scorsese'
-Bundle 'ramele/agrep'
+if v:version > 704 || v:version == 704 && has("patch1906")
+  Bundle 'ramele/agrep'
+endif
 Bundle 'kshenoy/vim-signature'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
@@ -122,7 +124,7 @@ set updatetime=900
 if has("gui_win32")         " Binaries live in different places for now
   let g:tagbar_ctags_bin = expand('~/bin/ctags.exe')
 else
-  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+  let g:tagbar_ctags_bin = 'ctags'
 endif
 let g:tagbar_iconchars = ['▸','▾']
 
@@ -216,6 +218,10 @@ else
   let g:gitgutter_sign_modified_removed = '● '
   " let g:gitgutter_sign_modified         = '• '
   " let g:gitgutter_sign_modified_removed = '•̲ '
+endif
+if has("gui") && has("unix")
+  let g:gitgutter_sign_modified         = '• '
+  let g:gitgutter_sign_modified_removed = '•̲ '
 endif
 
 
