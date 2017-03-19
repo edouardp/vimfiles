@@ -14,7 +14,7 @@ if has("gui_win32")
   set columns=160
   map <M-m> :simalt ~x<CR>
 endif
-if has("gui_gnome")
+if has("gui_gnome") || has("gui_gtk")
   "set guifont=fixed
   "set guifont=Luxi\ Mono\ 10
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -292,7 +292,16 @@ if has('mac')
 	map <D-Left> zc
 	map <D-S-Left> zM
 	map <D-S-Right> zR
-else
+endif
+
+if has('unix')
+	map <T-Right> zo
+	map <T-Left> zc
+	map <T-S-Left> zM
+	map <T-S-Right> zR
+endif
+
+if has('win32')
 	map <M-Right> zo
 	map <M-Left> zc
 	map <M-S-Left> zM
