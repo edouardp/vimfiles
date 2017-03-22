@@ -13,9 +13,9 @@ filetype off                 		" required!
 
 " -- Set up Vundle -----------------------------------------------------------
 
-set rtp+=~/vimfiles/bundle/vundle/
+set rtp+=~/vimfiles/bundle/Vundle.vim/
 call vundle#rc("~/vimfiles/bundle")
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 
 " -- My bundles --------------------------------------------------------------
@@ -158,6 +158,8 @@ let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
 
 " NERDTree
 let NERDTreeDirArrows=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 
 " Stat in home dir
@@ -214,10 +216,10 @@ if has("gui_macvim")
   "let g:gitgutter_sign_modified_removed = '●-'
   let g:gitgutter_sign_modified_removed = '●—'
 else
-  let g:gitgutter_sign_modified         = '● '
-  let g:gitgutter_sign_modified_removed = '● '
-  " let g:gitgutter_sign_modified         = '• '
-  " let g:gitgutter_sign_modified_removed = '•̲ '
+  " let g:gitgutter_sign_modified         = '● '
+  " let g:gitgutter_sign_modified_removed = '● '
+  let g:gitgutter_sign_modified         = '• '
+  let g:gitgutter_sign_modified_removed = '•̲ '
 endif
 if has("gui") && has("unix")
   let g:gitgutter_sign_modified         = '• '
