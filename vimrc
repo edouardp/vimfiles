@@ -55,6 +55,7 @@ if v:version > 704 || v:version == 704 && has("patch1906")
   Bundle 'ramele/agrep'
 endif
 Bundle 'kshenoy/vim-signature'
+Bundle 'posva/vim-vue'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
