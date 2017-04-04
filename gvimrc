@@ -255,6 +255,7 @@ imenu 1.40 PopUp.&Paste		<Esc>:if col(".")!=1<Bar>exe 'norm "*p'<Bar>else<Bar>ex
 cmenu 1.40 PopUp.&Paste		<C-R>*
 vmenu 1.50 PopUp.&Delete      x
 amenu 1.55 PopUp.-SEP2-		:
+amenu PopUp.Git\ Grep :set grepprg=git\ grep\ -n<CR>:silent grep -F <cword><CR>:cw<CR>:set grepprg=grep\ -nH<CR>
 amenu PopUp.Grep\ Source :grep <cword> *.cpp *.cs *.c *.h *.hpp *.rc<CR><CR>:cw<CR>
 amenu PopUp.RGrep\ Source :grep -r <cword> *<CR><CR>:cw<CR>
 amenu PopUp.FindGrep\ Source :grep -r <cword> `find . -name "*.[ch]*"`<CR><CR>:cw<CR>
