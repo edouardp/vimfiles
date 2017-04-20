@@ -57,6 +57,7 @@ if v:version > 704 || v:version == 704 && has("patch1906")
 endif
 Bundle 'kshenoy/vim-signature'
 Bundle 'posva/vim-vue'
+Bundle 'dracula/vim'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
@@ -84,7 +85,7 @@ set laststatus=2
 set winheight=10
 
 " Shift width
-set shiftwidth=2
+set shiftwidth=4
 
 " Turn off all wrapping
 set wrapmargin=0
@@ -181,7 +182,7 @@ endif
 let g:airline_theme='light'
 
 " Airline Hunks Customisation
-let g:airline#extensions#hunks#hunk_symbols = ['+', '●', '-']
+let g:airline#extensions#hunks#hunk_symbols = ['+', '•', '-']
 
 " powerline symbols
 if !exists('g:airline_symbols')

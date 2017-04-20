@@ -39,6 +39,11 @@ if has("gui")
   endif
 endif
 
+" Fix 'gx' handling on Ubuntu (so it doesn't use gvfs-open)
+if has("gui_gtk3")
+    let g:netrw_browsex_viewer="setsid xdg-open"
+endif
+
 
 " Switch on syntax highlighting.
 syntax on
