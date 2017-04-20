@@ -26,7 +26,8 @@ Bundle 'gregsexton/gitv'
 Bundle 'edouardp/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Yggdroot/indentLine'
 Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/nerdtree'
@@ -231,4 +232,9 @@ endif
 " Virtualenv Support
 let g:virtualenv_directory = '~/py'
 let g:airline#extensions#virtualenv#enabled = 1
+
+
+" Center cursor on screen while scrolling
+"set scrolloff=999
+
 
