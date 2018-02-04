@@ -81,138 +81,26 @@ set lcs+=tab:>-
 " is easy to accidentily type in Windows.
 set isprint=@,~-159,161-255
 
+
 " Browser Function
 "
 function! Browser ()
-let line0 = getline (".")
-let line = matchstr (line0, "http[^ ]*")
-if line==""
-    let line = matchstr (line0, "ftp[^ ]*")
-endif
-if line==""
-    let line = matchstr (line0, "file[^ ]*")
-endif
-let line = escape (line, "#?&;|%")
-":if line==""
-" let line = "\"" . (expand("%:p")) . "\""
-":endif
-exec '!start C:\Program Files (x86)\Google\Chrome\Application\chrome.exe '.line
-
+    let line0 = getline (".")
+    let line = matchstr (line0, "http[^ ]*")
+    if line==""
+        let line = matchstr (line0, "ftp[^ ]*")
+    endif
+    if line==""
+        let line = matchstr (line0, "file[^ ]*")
+    endif
+    let line = escape (line, "#?&;|%")
+    ":if line==""
+    " let line = "\"" . (expand("%:p")) . "\""
+    ":endif
+    exec '!start C:\Program Files (x86)\Google\Chrome\Application\chrome.exe '.line
 endfunction
 
-if 0
-" Set a nicer foldtext function
-set foldtext=MyFoldText()
-function! MyFoldText()
-let line = getline(v:foldstart)
 
-" if match( line, '^<#.*$' ) == 0
-"     lines = getline(v:foldstart, v:foldend)
-"     lines = join(lines, '\n')
-"     sub = substitute( lines, '<#\_.\{-}\.Synopsis\_.\{-}\(\w.*\)$', '\2', '' )
-"     if sub == ''
-"       sub = line
-"     endif
-"     sub = 'XXX'
-" else if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
-"     let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
-"
-"     let linenum = v:foldstart + 1
-"     while linenum < v:foldend
-"         let line = getline( linenum )
-"         let comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
-"         if comment_content != ''
-"             break
-"         endif
-"         let linenum = linenum + 1
-"     endwhile
-
-"     let sub = initial . ' ' . comment_content
-" else
-"     let sub = line
-"     let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
-"     if startbrace == '{'
-"         let line = getline(v:foldend)
-"         let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
-"         if endbrace == '}'
-"             let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
-"         endif
-"     endif
-" endif
-
-
-let lines = join(getline(v:foldstart, v:foldend), "\n")
-let sub = substitute( lines, '\s\{-}\(<#\).*\.[Ss][Yy][Nn][Oo][Pp][Ss][Ii][Ss]\_.\{-}\(\w[^\x0]*\).*', '\1 \2', '' )
-"                             space (non-greedy)
-"                                     <#
-"                                         Anything
-"                                            .Synopsis (case insensitive)
-"                                                                             space (non-greedy)
-"                                                                                     word character
-"                                                                                         Anything but NUL
-"                                                                                                anything
-"
-if sub == lines
-  let sub = line
-endif
-"let sub = lines
-
-let n = v:foldend - v:foldstart + 1
-let info = "   " . n . " lines "
-let sub = sub . repeat(' ', 120)
-
-let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
-let fold_w = getwinvar( 0, '&foldcolumn' )
-let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w )
-return sub . info
-endfunction
-endif
-
-
-
-if 0
-highlight FoldColumn  gui=bold    guifg=grey65     guibg=Grey90
-highlight Folded      gui=italic  guifg=Black      guibg=Grey90
-highlight LineNr      gui=NONE    guifg=grey60     guibg=Grey90
-
-
-
-"
-" Boy. Don't let programmers set colours.
-"
-" These are fixed to be almost pleasent. I've gone
-" completely overboard with that subtlety thing...
-"
-highlight Normal       gui=NONE    guifg=Black      guibg=White
-highlight NonText      gui=NONE    guifg=grey50     guibg=grey90
-highlight SpecialKey   gui=NONE    guifg=grey50     guibg=grey90
-highlight Cursor       gui=NONE    guifg=White      guibg=red4
-highlight StatusLine   gui=NONE    guifg=White      guibg=Black
-highlight StatusLineNC gui=NONE    guifg=White      guibg=grey30
-highlight VertSplit    gui=NONE    guifg=White      guibg=grey30
-highlight VerticalSep  gui=NONE    guifg=White      guibg=grey30
-highlight Visual       gui=NONE    guifg=White      guibg=Black
-
-highlight Search       gui=NONE    guifg=NONE       guibg=Yellow
-
-highlight Comment     gui=NONE    guifg=#880000    guibg=White
-highlight Constant    gui=NONE    guifg=Black      guibg=White
-highlight Special     gui=NONE    guifg=#000088    guibg=LightGrey
-highlight Identifier  gui=NONE    guifg=#000088    guibg=White
-highlight Statement   gui=NONE    guifg=#000088    guibg=White
-highlight Statement   gui=NONE    guifg=#000088    guibg=White
-highlight Type        gui=NONE    guifg=#000088    guibg=White
-highlight PreProc     gui=NONE    guifg=#770077    guibg=White
-highlight Error       gui=bold    guifg=White      guibg=red4
-
-highlight Pmenu       gui=NONE    guifg=White      guibg=Gray
-highlight PmenuSel    gui=NONE    guifg=Black      guibg=LightGray
-
-highlight DiffAdd     gui=NONE    guifg=Black      guibg=LightBlue
-highlight DiffChange  gui=NONE    guifg=Black      guibg=LightGreen
-highlight DiffDelete  gui=NONE    guifg=Pink       guibg=LightPink
-
-endif
 
 
 " Font Menu
