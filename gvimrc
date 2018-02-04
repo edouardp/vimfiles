@@ -20,7 +20,8 @@ if has("gui_gnome") || has("gui_gtk")
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 if has("gui_macvim")
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+  "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+  set guifont=DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h13
 endif
 
 " Make command line two lines high
