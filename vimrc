@@ -24,8 +24,10 @@ Bundle 'VundleVim/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'gregsexton/gitv'
 Bundle 'edouardp/vim-railscasts-theme'
+Bundle 'edouardp/myob-colorscheme'
 Bundle 'bling/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
+Bundle 'edouardp/myob-airline-theme'
 "Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Yggdroot/indentLine'
 Bundle 'SirVer/ultisnips'
@@ -58,6 +60,12 @@ endif
 Bundle 'kshenoy/vim-signature'
 Bundle 'posva/vim-vue'
 Bundle 'dracula/vim'
+Bundle 'chrisbra/Colorizer'
+Bundle 'OrangeT/vim-csharp'
+Bundle 'isRuslan/vim-es6'
+
+" Trying Sparkup
+Plugin 'rstacruz/sparkup'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
@@ -162,7 +170,9 @@ let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
 " NERDTree
 let NERDTreeDirArrows=1
 let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowExpandable = '▸ 📂'
 let g:NERDTreeDirArrowCollapsible = '▾'
+"let g:NERDTreeDirArrowCollapsible = '▾ 📂'
 
 
 " Stat in home dir
@@ -195,6 +205,9 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+let g:airline_symbols.linenr = '📋'
+let g:airline_symbols.whitespace = '🔥'
 
 let g:airline_powerline_fonts = 1
 set encoding=utf-8
@@ -238,4 +251,8 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Center cursor on screen while scrolling
 "set scrolloff=999
 
+
+" sparkup mappings
+let g:sparkupExecuteMapping='<D-CR>'
+let g:sparkupNextMapping='<tab>'
 
