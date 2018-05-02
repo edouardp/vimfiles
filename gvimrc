@@ -141,13 +141,13 @@ amenu Tools.Ascii\ Status\ Line :set statusline=%f%(%m%r%h%)%=Ascii\ %b\ (%B)<CR
 
 unmenu PopUp
 vmenu 1.20 PopUp.Cu&t         "*x
-vmenu 1.30 PopUp.&Copy		"*y
-nmenu 1.40 PopUp.&Paste		"*P`]:if col(".")!=1<Bar>exe "norm l"<Bar>endif<CR>
-vmenu 1.40 PopUp.&Paste		"-x"*P`]
-imenu 1.40 PopUp.&Paste		<Esc>:if col(".")!=1<Bar>exe 'norm "*p'<Bar>else<Bar>exe 'norm "*P'<Bar>endif<CR>`]a
-cmenu 1.40 PopUp.&Paste		<C-R>*
+vmenu 1.30 PopUp.&Copy      "*y
+nmenu 1.40 PopUp.&Paste     "*P`]:if col(".")!=1<Bar>exe "norm l"<Bar>endif<CR>
+vmenu 1.40 PopUp.&Paste     "-x"*P`]
+imenu 1.40 PopUp.&Paste     <Esc>:if col(".")!=1<Bar>exe 'norm "*p'<Bar>else<Bar>exe 'norm "*P'<Bar>endif<CR>`]a
+cmenu 1.40 PopUp.&Paste     <C-R>*
 vmenu 1.50 PopUp.&Delete      x
-amenu 1.55 PopUp.-SEP2-		:
+amenu 1.55 PopUp.-SEP2-     :
 amenu PopUp.Git\ Grep :set grepprg=git\ grep\ -n<CR>:silent grep -F <cword><CR>:cw<CR>:set grepprg=grep\ -nH<CR>
 amenu PopUp.Grep\ Source :grep <cword> *.cpp *.cs *.c *.h *.hpp *.rc<CR><CR>:cw<CR>
 amenu PopUp.RGrep\ Source :grep -r <cword> *<CR><CR>:cw<CR>
@@ -182,24 +182,24 @@ inoremap <M-/> <C-R>=strftime("%Y-%m-%d: ")<CR>
 
 " Quicker fold open/close mapping
 if has('mac')
-	map <D-Right> zo
-	map <D-Left> zc
-	map <D-S-Left> zM
-	map <D-S-Right> zR
+    map <D-Right> zo
+    map <D-Left> zc
+    map <D-S-Left> zM
+    map <D-S-Right> zR
 endif
 
 if has('unix')
-	map <T-Right> zo
-	map <T-Left> zc
-	map <T-S-Left> zM
-	map <T-S-Right> zR
+    map <T-Right> zo
+    map <T-Left> zc
+    map <T-S-Left> zM
+    map <T-S-Right> zR
 endif
 
 if has('win32')
-	map <M-Right> zo
-	map <M-Left> zc
-	map <M-S-Left> zM
-	map <M-S-Right> zR
+    map <M-Right> zo
+    map <M-Left> zc
+    map <M-S-Left> zM
+    map <M-S-Right> zR
 endif
 
 
