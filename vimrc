@@ -30,6 +30,7 @@ Bundle 'VundleVim/Vundle.vim'
 " -- My bundles --------------------------------------------------------------
 
 " Original repos on GitHub
+"Bundle 'godlygeek/csapprox'
 Bundle 'tpope/vim-fugitive'
 Bundle 'gregsexton/gitv'
 Bundle 'edouardp/vim-railscasts-theme'
@@ -76,6 +77,21 @@ Bundle 'isRuslan/vim-es6'
 " FZF
 so '/usr/local/opt/fzf/plugin/fzf.vim'
 Bundle 'junegunn/fzf.vim'
+
+" defaults have to be set *before* loading the plugin
+" Nah, that does work either. This is a mess.
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsDefaultFolderOpenSymbol = '📂'
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '📁'
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+Bundle 'ryanoasis/vim-devicons'
+NERDTreeToggle
+call webdevicons#softRefresh()
+NERDTreeToggle
 
 " Trying Sparkup
 Bundle 'rstacruz/sparkup'
@@ -150,6 +166,7 @@ if has("gui_win32")         " Binaries live in different places for now
 else
   let g:tagbar_ctags_bin = 'ctags'
 endif
+"let g:tagbar_iconchars = ['','']
 let g:tagbar_iconchars = ['▸','▾']
 
 
@@ -182,8 +199,10 @@ let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
 
 " NERDTree
 let NERDTreeDirArrows=1
+"let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowExpandable = '▸ 📂'
+"let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeDirArrowCollapsible = '▾'
 "let g:NERDTreeDirArrowCollapsible = '▾ 📂'
 

@@ -22,6 +22,7 @@ endif
 if has("gui_macvim")
   "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
   set guifont=DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h13
+  "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono:h14
 endif
 
 " Make command line two lines high
@@ -261,6 +262,15 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Constant'],
   \ 'spinner': ['fg', 'WarningMsg'],
   \ 'header':  ['fg', 'Normal'] }
+
+" NERDTree hack to reduce the uglyness of Dirname/
+"
+hi NERDTreeDirSlash guifg=#555555
+
+
+" IndentLine Conceal colour
+"
+let g:indentLine_color_gui='Grey25'
 
 
 "
