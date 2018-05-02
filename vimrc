@@ -13,10 +13,11 @@ filetype off                 		" required!
 
 " -- Workaround for MacVim/pyenv/brew interactions ---------------------------
 
-"if has('gui_macvim')
-    let $PYTHONHOME=/Users/edouard.poor/.pyenv/versions/3.6.4/
-    set pythonthreedll=/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/libpython3.6m.dylib
-"endif
+if has('gui_macvim')
+    set pythonthreedll=/x
+    "let $PYTHONHOME=/Users/edouard.poor/.pyenv/versions/3.6.4/
+    "set pythonthreedll=/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/libpython3.6m.dylib
+endif
 
 
 " -- Set up Vundle -----------------------------------------------------------
@@ -72,8 +73,12 @@ Bundle 'chrisbra/Colorizer'
 Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 
+" FZF
+so '/usr/local/opt/fzf/plugin/fzf.vim'
+Bundle 'junegunn/fzf.vim'
+
 " Trying Sparkup
-Plugin 'rstacruz/sparkup'
+Bundle 'rstacruz/sparkup'
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
@@ -183,9 +188,11 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 "let g:NERDTreeDirArrowCollapsible = '▾ 📂'
 
 
-" Stat in home dir
+" Start in home dir
 cd ~
 
+
+" Additional tagbar mappings
 let g:tagbar_type_ps1 = { 'ctagstype' : 'powershell', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-ps1.cnf') }
 let g:tagbar_type_xml = { 'ctagstype' : 'XML', 'kinds' : [ 'd:definition', ], 'sort' : 0, 'deffile' : expand('~/vimfiles/ctags-PatternLibrary.cnf') }
 
@@ -261,6 +268,18 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 
 " sparkup mappings
+"
 let g:sparkupExecuteMapping='<D-CR>'
 let g:sparkupNextMapping='<tab>'
+
+
+" MYOB Theme
+"
+colorscheme myob
+let g:airline_theme='myob'
+
+
+" IndentLine conceal char
+"
+let g:indentLine_char = '┊'
 
