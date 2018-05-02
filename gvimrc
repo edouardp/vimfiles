@@ -20,7 +20,9 @@ if has("gui_gnome") || has("gui_gtk")
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 if has("gui_macvim")
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono:h14
+  "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+  set guifont=DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h13
+  "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono:h14
 endif
 
 " Make command line two lines high
@@ -234,6 +236,32 @@ if has("gui")
   endif
 endif
 
+" IndentLine
+"
+let g:indentLine_char = '┊'
+
+
+" Use GUI colours in the terminal
+"
+set termguicolors
+
+
+" fzf colourscheme support
+"
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Define'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Function'],
+  \ 'fg+':     ['fg', 'Constant', 'Function', 'Function'],
+  \ 'bg+':     ['bg', 'Normal', 'Normal'],
+  \ 'hl+':     ['fg', 'Function'],
+  \ 'info':    ['fg', 'Comment'],
+  \ 'border':  ['fg', 'Normal'],
+  \ 'prompt':  ['fg', 'Statement'],
+  \ 'pointer': ['fg', 'DiffAdd'],
+  \ 'marker':  ['fg', 'Constant'],
+  \ 'spinner': ['fg', 'WarningMsg'],
+  \ 'header':  ['fg', 'Normal'] }
 
 " NERDTree hack to reduce the uglyness of Dirname/
 "
