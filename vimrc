@@ -51,7 +51,7 @@ Bundle 'edouardp/folde'
 Bundle 'tpope/vim-characterize'
 Bundle 'edouardp/ps1-ultisnips'
 Bundle 'mbbill/undotree'
-Bundle 'jacquesbh/vim-showmarks'
+"Bundle 'jacquesbh/vim-showmarks'
 Bundle 'vlmarek/ConqueVlad'
 Bundle 'istepura/vim-toolbar-icons-silk'
 Bundle 'airblade/vim-gitgutter'
@@ -75,7 +75,7 @@ Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 
 " FZF
-so '/usr/local/opt/fzf/plugin/fzf.vim'
+Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 
 " defaults have to be set *before* loading the plugin
@@ -95,6 +95,10 @@ NERDTreeToggle
 
 " Trying Sparkup
 Bundle 'rstacruz/sparkup'
+
+" Trying Expand Region
+Bundle 'terryma/vim-expand-region'
+
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'

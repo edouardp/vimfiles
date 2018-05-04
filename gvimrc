@@ -106,23 +106,44 @@ endfunction
 
 " Font Menu
 "
-amenu Fonts.Anonymous\ Pro                 :set guifont=Anonymous\ Pro\ for\ Powerline:h14<CR>
-amenu Fonts.Cousine                        :set guifont=Cousine\ for\ Powerline:h14<CR>
-amenu Fonts.DejaVu\ Sans\ Mono             :set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12<CR>
-amenu Fonts.Droid\ Sans\ Mono              :set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12<CR>
-amenu Fonts.Droid\ Sans\ Mono\ Dotted      :set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h12<CR>
-amenu Fonts.Droid\ Sans\ Mono\ Slashed     :set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h12<CR>
-amenu Fonts.Fira\ Mono                     :set guifont=Fira\ Mono\ for\ Powerline:h13<CR>
-amenu Fonts.Fira\ Mono\ Medium             :set guifont=Fira\ Mono\ Medium\ for\ Powerline:h13<CR>
-amenu Fonts.Hack                           :set guifont=Hack:h13<CR>
-amenu Fonts.Inconsolata                    :set guifont=Inconsolata\ for\ Powerline:h13<CR>
-amenu Fonts.Input\ Mono                    :set guifont=Input\ Mono:h13<CR>
-amenu Fonts.Liberation\ Mono               :set guifont=Liberation\ Mono\ for\ Powerline:h13<CR>
-amenu Fonts.Meslo\ LG\ L                   :set guifont=Meslo\ LG\ L\ for\ Powerline:h13<CR>
-amenu Fonts.Monofur                        :set guifont=monofur\ for\ Powerline:h14<CR>
-amenu Fonts.Roboto\ Mono                   :set guifont=Roboto\ Mono\ for\ Powerline:h13<CR>
-amenu Fonts.Source\ Code\ Pro              :set guifont=Source\ Code\ Pro\ for\ Powerline:h11<CR>
-amenu Fonts.Ubuntu\ Mono                   :set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14<CR>
+aunmenu Fonts
+amenu Fonts.3270-Medium                     :set guifont=3270-Medium\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Anonymice                       :set guifont=Anonymice\ Nerd\ Font\ Complete\ Mono:h14<CR>
+"amenu Fonts.Arimo\ Regular                  :set guifont=Arimo\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.AurulentSansMono-Regular        :set guifont=AurulentSansMono-Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Bitstream\ Vera\ Sans\ Mono     :set guifont=Bitstream\ Vera\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Code\ New\ Roman                :set guifont=Code\ New\ Roman\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Cousine\ Regular                :set guifont=Cousine\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.DejaVu\ Sans\ Mono              :set guifont=DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Droid\ Sans\ Mono               :set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Fantasque\ Sans\ Mono\ Regular  :set guifont=Fantasque\ Sans\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h15<CR>
+amenu Fonts.FuraCode\ Nerd\ Font\ Mono       :set guifont=FuraCode\ Nerd\ Font\ Mono:h14<CR>
+amenu Fonts.Fura\ Mono\ Regular             :set guifont=Fura\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Go\ Mono                        :set guifont=Go\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+"amenu Fonts.GohuFont-Medium                 :set guifont=GohuFont-Medium\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Hasklug                         :set guifont=Hasklug\ Nerd\ Font\ Complete\ Mono:h14<CR>
+"amenu Fonts.Heavy\ Data                     :set guifont=Heavy\ Data\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Hurmit\ Medium                  :set guifont=Hurmit\ Medium\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.InconsolataGo                   :set guifont=InconsolataGo\ Nerd\ Font\ Complete\ Mono:h15<CR>
+amenu Fonts.Iosevka                         :set guifont=Iosevka\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Knack\ Regular                  :set guifont=Knack\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Lekton                          :set guifont=Lekton\ Nerd\ Font\ Complete\ Mono:h15<CR>
+amenu Fonts.Literation\ Mono                :set guifont=Literation\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.M+\ 1m\ regular                 :set guifont=M+\ 1m\ regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Meslo\ LG\ S\ Regular           :set guifont=Meslo\ LG\ S\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Monoid\ Regular                 :set guifont=Monoid\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.ProFont\ IIx                    :set guifont=ProFont\ IIx\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.ProFontWindows                  :set guifont=ProFontWindows\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.ProggyCleanTT                   :set guifont=ProggyCleanTT\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Roboto\ Mono                    :set guifont=Roboto\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Sauce\ Code\ Pro                :set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Shure\ Tech\ Mono               :set guifont=Shure\ Tech\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Space\ Mono                     :set guifont=Space\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Terminess\ (TTF)                :set guifont=Terminess\ (TTF)\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Tinos                           :set guifont=Tinos\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.Ubuntu\ Mono                    :set guifont=Ubuntu\ Mono\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.monofur                         :set guifont=monofur\ Nerd\ Font\ Complete\ Mono:h14<CR>
+amenu Fonts.mononoki-Regular                :set guifont=mononoki-Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
 
 
 
