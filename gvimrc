@@ -236,6 +236,7 @@ if has("gui")
   endif
 endif
 
+
 " IndentLine
 "
 let g:indentLine_char = '┊'
@@ -271,6 +272,12 @@ hi NERDTreeDirSlash guifg=#555555
 " IndentLine Conceal colour
 "
 let g:indentLine_color_gui='Grey25'
+
+
+" Terminal Shortcut
+"
+map <D-Bar> :botright terminal ++close ++rows=12 bash -c "exec bash --init-file <(echo 'cd %:p:h; source ~/.bash_profile')"<CR>
+map <D-Bslash> :botright terminal ++close ++rows=12 bash -c "exec bash --init-file <(echo 'source ~/.bash_profile')"<CR>
 
 
 "

@@ -75,8 +75,11 @@ Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 
 " FZF
-so '/usr/local/opt/fzf/plugin/fzf.vim'
+Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
+
+Bundle 'kien/rainbow_parentheses.vim'
+
 
 " defaults have to be set *before* loading the plugin
 " Nah, that does work either. This is a mess.
@@ -89,9 +92,9 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 Bundle 'ryanoasis/vim-devicons'
-NERDTreeToggle
+"NERDTreeToggle
 call webdevicons#softRefresh()
-NERDTreeToggle
+"NERDTreeToggle
 
 " Trying Sparkup
 Bundle 'rstacruz/sparkup'
@@ -237,10 +240,11 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 let g:airline_symbols.linenr = '📋'
+let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = '🔥'
 
 let g:airline_powerline_fonts = 1
@@ -301,4 +305,5 @@ let g:airline_theme='myob'
 " IndentLine conceal char
 "
 let g:indentLine_char = '┊'
+set concealcursor=c
 
