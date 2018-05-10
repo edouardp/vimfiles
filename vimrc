@@ -52,7 +52,7 @@ Bundle 'tpope/vim-characterize'
 Bundle 'edouardp/ps1-ultisnips'
 Bundle 'mbbill/undotree'
 "Bundle 'jacquesbh/vim-showmarks'
-Bundle 'vlmarek/ConqueVlad'
+"Bundle 'vlmarek/ConqueVlad'
 Bundle 'istepura/vim-toolbar-icons-silk'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edouardp/ttbar'
@@ -80,6 +80,8 @@ Bundle 'junegunn/fzf.vim'
 
 Bundle 'kien/rainbow_parentheses.vim'
 
+"Bundle 'severin-lemaignan/vim-minimap'
+
 
 " defaults have to be set *before* loading the plugin
 " Nah, that does work either. This is a mess.
@@ -93,7 +95,7 @@ let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 Bundle 'ryanoasis/vim-devicons'
 "NERDTreeToggle
-call webdevicons#softRefresh()
+"call webdevicons#softRefresh()
 "NERDTreeToggle
 
 " Trying Sparkup
@@ -208,9 +210,11 @@ let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
 let NERDTreeDirArrows=1
 "let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowExpandable = ''
 "let g:NERDTreeDirArrowExpandable = '▸ 📂'
 "let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowCollapsible = ''
 "let g:NERDTreeDirArrowCollapsible = '▾ 📂'
 
 
