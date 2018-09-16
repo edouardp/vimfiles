@@ -14,7 +14,7 @@ filetype off                 		" required!
 " -- Workaround for MacVim/pyenv/brew interactions ---------------------------
 
 if has('gui_macvim')
-    set pythonthreedll=/x
+   "set pythonthreedll=/x
     "let $PYTHONHOME=/Users/edouard.poor/.pyenv/versions/3.6.4/
     "set pythonthreedll=/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/libpython3.6m.dylib
 endif
@@ -43,10 +43,11 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'SirVer/ultisnips'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'kien/tabman.vim'
 Bundle 'PProvost/vim-ps1'
 Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 Bundle 'edouardp/folde'
 Bundle 'tpope/vim-characterize'
 Bundle 'edouardp/ps1-ultisnips'
@@ -73,10 +74,17 @@ Bundle 'dracula/vim'
 Bundle 'chrisbra/Colorizer'
 Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
+Bundle 'vim-python/python-syntax'
 
 " FZF
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
+
+" Pyenv Support
+Bundle "lambdalisue/vim-pyenv"
+
+" Coverage Reporting for Python
+Bundle "alfredodeza/coveragepy.vim"
 
 Bundle 'kien/rainbow_parentheses.vim'
 
@@ -206,6 +214,9 @@ endfunction
 " let g:ctrlp_max_files=0
 " let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
 
+
+" Ctrl-P binding for FZF
+"
 nnoremap <C-P> :botright FZF<CR>
 
 
@@ -239,8 +250,10 @@ endif
 " Airline Customisation
 let g:airline_theme='light'
 
+
 " Airline Hunks Customisation
 let g:airline#extensions#hunks#hunk_symbols = ['+', '•', '-']
+
 
 " powerline symbols
 if !exists('g:airline_symbols')
@@ -319,9 +332,35 @@ let g:indentLine_char = '┊'
 set concealcursor=c
 
 
-" WebDevIcons support for 'vue' files
+" Devicons overrides
 "
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = 'v'
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = '📂'
+
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsDefaultFolderOpenSymbol = '📂'
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '📁'
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 
 
+" nerdtree-git-plugin NERDTree integration
+"
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "•",
+    \ "Staged"    : "",
+    \ "Untracked" : "",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "•",
+    \ "Clean"     : "✔︎",
+    \ "Ignored"   : " ",
+    \ "Unknown"   : "?"
+    \ }
 
