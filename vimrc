@@ -203,8 +203,10 @@ endfunction
 
 
 " Ctrl-P Customisation
-let g:ctrlp_max_files=0
-let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
+" let g:ctrlp_max_files=0
+" let g:ctrlp_cache_dir=expand("~/.vimfiles/.ctrlp_cache")
+
+nnoremap <C-P> :botright FZF<CR>
 
 
 " NERDTree
@@ -315,4 +317,11 @@ let g:airline_theme='myob'
 "
 let g:indentLine_char = '┊'
 set concealcursor=c
+
+
+" WebDevIcons support for 'vue' files
+"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = 'v'
+
+
 
