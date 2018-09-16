@@ -106,7 +106,7 @@ endfunction
 
 " Font Menu
 "
-aunmenu Fonts
+"aunmenu Fonts
 amenu Fonts.3270-Medium                     :set guifont=3270-Medium\ Nerd\ Font\ Complete\ Mono:h14<CR>
 amenu Fonts.Anonymice                       :set guifont=Anonymice\ Nerd\ Font\ Complete\ Mono:h14<CR>
 "amenu Fonts.Arimo\ Regular                  :set guifont=Arimo\ Regular\ Nerd\ Font\ Complete\ Mono:h14<CR>
@@ -299,6 +299,17 @@ let g:indentLine_color_gui='Grey25'
 "
 map <D-Bar> :botright terminal ++close ++rows=12 bash -c "exec bash --init-file <(echo 'cd %:p:h; source ~/.bash_profile')"<CR>
 map <D-Bslash> :botright terminal ++close ++rows=12 bash -c "exec bash --init-file <(echo 'source ~/.bash_profile')"<CR>
+
+
+
+" Temporary hack to deal with Splat-V in terminal
+"
+macm Edit.Paste key=<nop>
+tmap <D-v> <C-w>"+
+nnoremap <D-v> "+p
+vnoremap <D-v> "+p
+inoremap <D-v> <C-R><C-O>+
+cnoremap <D-v> <C-R><C-O>+
 
 
 "
