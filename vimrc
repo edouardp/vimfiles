@@ -184,6 +184,7 @@ else
   let g:tagbar_ctags_bin = 'ctags'
 endif
 "let g:tagbar_iconchars = ['','']
+"let g:tagbar_iconchars = ['▸','▾']
 let g:tagbar_iconchars = ['','']
 
 
