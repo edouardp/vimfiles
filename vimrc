@@ -112,6 +112,9 @@ Bundle 'rstacruz/sparkup'
 " Trying Expand Region
 Bundle 'terryma/vim-expand-region'
 
+" Coc
+" Bundle 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
@@ -217,7 +220,8 @@ endfunction
 
 " Ctrl-P binding for FZF
 "
-nnoremap <C-P> :botright FZF<CR>
+"nnoremap <C-P> :botright FZF<CR>
+nnoremap <C-P> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 
 
 
@@ -364,4 +368,19 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Ignored"   : " ",
     \ "Unknown"   : "?"
     \ }
+
+
+" Grep with preview
+"
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%', '?'),
+  \   <bang>0)
+
+"noremap <C-P> :call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case *', 1, fzf#vim#with_preview('right:50%', '?'), 0)<CR>
+
+
+
 
