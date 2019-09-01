@@ -224,7 +224,6 @@ endfunction
 nnoremap <C-P> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 
 
-
 " NERDTree
 let NERDTreeDirArrows=1
 "let g:NERDTreeDirArrowExpandable = ''
@@ -384,3 +383,100 @@ command! -bang -nargs=* Rg
 
 
 
+" Send selection to terminal
+"
+"   WIP
+"
+function! Find_terminal()
+    redir => buffers_output
+    execute('silent ls')
+    redir END
+    let l:buffers_output_rows = split(l:buffers_output, "\n")
+    for l:buffers_output_row in l:buffers_output_rows
+        let l:parts = matchlist(l:buffers_output_row, '^\s*\(\d\+\)\(.....\) "\(.*\)"')
+        if l:parts[2][3] == "R"
+            return 0 + l:parts[1]
+        endif
+    endfor
+    return 0
+endfunction
+
+function! Send_Current_Line_To_Terminal()
+    let t = getline(".")
+    if char2nr(t[len(t)-1]) == 10 || char2nr(t[len(t)-1]) == 13 
+        " Nothing
+    else
+        let t = t . "\<CR>"
+    endif
+    let w = Find_terminal()
+    if w != 0
+        call term_sendkeys(w, t) 
+    endif
+endfun
+nnoremap <C-s> :call Send_Current_Line_To_Terminal()<CR>
+
+function! Send_Selection_To_Terminal()
+    " Uses the 'z' register
+    normal! gv"zy
+    if char2nr(@z[len(@z)-1]) == 10 || char2nr(@z[len(@z)-1]) == 13 
+        "echo "ends with <CR>"
+        let t = @z
+    else
+        "echo "doesn't end with <CR>"
+        let t = @z . "\<CR>"
+    endif
+    let w = Find_terminal()
+    if w != 0
+        call term_sendkeys(w, t) 
+    endif
+endfun
+vnoremap <C-s> :<C-U>call Send_Selection_To_Terminal()<CR>
+
+function! Find_terminal()
+    redir => buffers_output
+    execute('silent ls')
+    redir END
+    let l:buffers_output_rows = split(l:buffers_output, "\n")
+    for l:buffers_output_row in l:buffers_output_rows
+        let l:parts = matchlist(l:buffers_output_row, '^\s*\(\d\+\)\(.....\) "\(.*\)"')
+        if l:parts[2][3] == "R"
+            return 0 + l:parts[1]
+        endif
+    endfor
+    return 0
+endfunction
+
+function! Send_Current_Line_To_Terminal()
+    let t = getline(".")
+    if char2nr(t[len(t)-1]) == 10 || char2nr(t[len(t)-1]) == 13 
+        " Nothing
+    else
+        let t = t . "\<CR>"
+    endif
+    let w = Find_terminal()
+    if w != 0
+        call term_sendkeys(w, t) 
+    endif
+endfun
+nnoremap <C-s> :call Send_Current_Line_To_Terminal()<CR>
+
+function! Send_Selection_To_Terminal()
+    " Uses the 'z' register
+    normal! gv"zy
+    if char2nr(@z[len(@z)-1]) == 10 || char2nr(@z[len(@z)-1]) == 13 
+        "echo "ends with <CR>"
+        let t = @z
+    else
+        "echo "doesn't end with <CR>"
+        let t = @z . "\<CR>"
+    endif
+    let w = Find_terminal()
+    if w != 0
+        call term_sendkeys(w, t) 
+    endif
+endfun
+vnoremap <C-s> :<C-U>call Send_Selection_To_Terminal()<CR>
+
+" clear
+" ls
+" find ~/Downloads
