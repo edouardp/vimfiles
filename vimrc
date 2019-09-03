@@ -76,6 +76,8 @@ Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 Bundle 'vim-python/python-syntax'
 
+Bundle 'tpope/vim-cucumber.git'
+
 " FZF
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
@@ -87,6 +89,8 @@ Bundle "lambdalisue/vim-pyenv"
 Bundle "alfredodeza/coveragepy.vim"
 
 Bundle 'kien/rainbow_parentheses.vim'
+
+Bundle 'ap/vim-css-color'
 
 "Bundle 'severin-lemaignan/vim-minimap'
 
@@ -462,3 +466,30 @@ vnoremap <C-s> :<C-U>call Send_Selection_To_Terminal()<CR>
 " clear
 " ls
 " find ~/Downloads
+"
+
+
+
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+"
+" Security Hole (keep till running patched vim)
+"
+" Or, keep it off forever. I've literally never user this in the last
+" 25 years, so maybe I won't want to in the next 25.
+"
+set modelines=0
+set nomodeline
+
+
+" Load special augroup for auto saving/loading my folds from 'notes'
+"
+let s:current_script_path = expand('<sfile>')
+exec "source " . s:current_script_path . "/" . "notes-folding.vim"
+
+
+" Load additional startup *.vim files
+"
+runtime! startup/*.vim
+
+
+
