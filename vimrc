@@ -20,77 +20,73 @@ if has('gui_macvim')
 endif
 
 
-" -- Set up Vundle -----------------------------------------------------------
+" -- set pyenv version -------------------------------------------------------
 
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-call vundle#rc("~/vimfiles/bundle")
-Bundle 'VundleVim/Vundle.vim'
+let $PYENV_VERSION="3.6.4"
+
+
+" -- Set up vim-plug ---------------------------------------------------------
+
+call plug#begin('~/vimfiles/plugged')
 
 
 " -- My bundles --------------------------------------------------------------
 
 " Original repos on GitHub
-"Bundle 'godlygeek/csapprox'
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
-Bundle 'edouardp/vim-railscasts-theme'
-Bundle 'edouardp/myob-colorscheme'
-Bundle 'bling/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'edouardp/myob-airline-theme'
-"Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Yggdroot/indentLine'
-Bundle 'SirVer/ultisnips'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'kien/tabman.vim'
-Bundle 'PProvost/vim-ps1'
-Bundle 'majutsushi/tagbar'
-"Bundle 'kien/ctrlp.vim'
-Bundle 'edouardp/folde'
-Bundle 'tpope/vim-characterize'
-Bundle 'edouardp/ps1-ultisnips'
-Bundle 'mbbill/undotree'
-"Bundle 'jacquesbh/vim-showmarks'
-"Bundle 'vlmarek/ConqueVlad'
-Bundle 'istepura/vim-toolbar-icons-silk'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'edouardp/ttbar'
-Bundle 'dr-chip-vim-scripts/ZoomWin'
-Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'ivanov/vim-ipython'
-Bundle 'edouardp/arrowmapper'
-Bundle 'qstrahl/vim-matchmaker'
-Bundle 'natw/keyboard_cat.vim'
-Bundle 'edouardp/scorsese'
-if v:version > 704 || v:version == 704 && has("patch1906")
-  Bundle 'ramele/agrep'
-endif
-Bundle 'kshenoy/vim-signature'
-Bundle 'posva/vim-vue'
-Bundle 'dracula/vim'
-Bundle 'chrisbra/Colorizer'
-Bundle 'OrangeT/vim-csharp'
-Bundle 'isRuslan/vim-es6'
-Bundle 'vim-python/python-syntax'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv'
+Plug 'edouardp/vim-railscasts-theme'
+Plug 'edouardp/myob-colorscheme'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edouardp/myob-airline-theme'
+Plug 'Yggdroot/indentLine'
+Plug 'SirVer/ultisnips'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kien/tabman.vim'
+Plug 'PProvost/vim-ps1'
+Plug 'majutsushi/tagbar'
+Plug 'edouardp/folde'
+Plug 'tpope/vim-characterize'
+Plug 'edouardp/ps1-ultisnips'
+Plug 'mbbill/undotree'
+Plug 'istepura/vim-toolbar-icons-silk'
+Plug 'airblade/vim-gitgutter'
+Plug 'edouardp/ttbar'
+Plug 'dr-chip-vim-scripts/ZoomWin'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'ivanov/vim-ipython'
+Plug 'edouardp/arrowmapper'
+Plug 'qstrahl/vim-matchmaker'
+Plug 'natw/keyboard_cat.vim'
+Plug 'edouardp/scorsese'
+Plug 'ramele/agrep'
+Plug 'kshenoy/vim-signature'
+Plug 'posva/vim-vue'
+Plug 'dracula/vim'
+Plug 'chrisbra/Colorizer'
+Plug 'OrangeT/vim-csharp'
+Plug 'isRuslan/vim-es6'
+Plug 'vim-python/python-syntax'
 
-Bundle 'tpope/vim-cucumber.git'
+Plug 'tpope/vim-cucumber'
 
 " FZF
-Bundle 'junegunn/fzf'
-Bundle 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Pyenv Support
-Bundle "lambdalisue/vim-pyenv"
+Plug 'lambdalisue/vim-pyenv'
 
 " Coverage Reporting for Python
-Bundle "alfredodeza/coveragepy.vim"
+Plug 'alfredodeza/coveragepy.vim'
 
-Bundle 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
-Bundle 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 
 "Bundle 'severin-lemaignan/vim-minimap'
 
@@ -105,24 +101,28 @@ let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '📁'
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-Bundle 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 "NERDTreeToggle
 "call webdevicons#softRefresh()
 "NERDTreeToggle
 
 " Trying Sparkup
-Bundle 'rstacruz/sparkup'
+Plug 'rstacruz/sparkup'
 
 " Trying Expand Region
-Bundle 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 
 " Coc
-" Bundle 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 if !has("gui_win32")        " Not supported on Windows out of the box
 "Bundle 'Valloric/YouCompleteMe'
 endif
+
+
+" -- Initialize plugin system ------------------------------------------------
+
+call plug#end()
 
 
 " -- Standard Header for Vundle based vimrc ----------------------------------
@@ -502,12 +502,19 @@ set nomodeline
 " Load special augroup for auto saving/loading my folds from 'notes'
 "
 let s:current_script_path = expand('<sfile>')
-exec "source " . s:current_script_path . "/" . "notes-folding.vim"
+"exec "source " . s:current_script_path . "/startup/" . "notes-folding.vim"
+exec "source " . "~/vimfiles/startup/" . "preserve_notes_files_folds.vim"
+
+
+" Temp fix for Vim setting wrong .vue filetype
+"
+autocmd FileType vuejs set filetype=vue
 
 
 " Load additional startup *.vim files
 "
 runtime! startup/*.vim
+
 
 
 
