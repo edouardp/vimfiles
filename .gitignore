@@ -1,8 +1,24 @@
-bundle/
-view/
-*.swp
-_viminfo
-# General
+# macOS
 .DS_Store
-.AppleDouble
-.LSOverride
+
+# Vim temp/swap files
+*.swp
+*.swo
+*~
+_viminfo
+.viminfo
+.netrwhist
+
+# Plugins managed by vim-plug (can be reinstalled)
+plugged/
+
+# Temp directories
+vim_tmp/
+
+# Files that shouldn't be in vimfiles
+.ssh/
+.zsh_sessions/
+.zsh_history
+.lesshst
+.config/
+.local/

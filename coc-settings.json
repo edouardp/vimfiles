@@ -1,120 +1,19 @@
 {
-    "suggest.completionItemKindLabels": {
-        "keyword":        "",
-        "variable":       "",
-        "value":          "",
-        "operator":       "Ψ",
-        "function":       "ƒ",
-        "reference":      "\ufa46",
-        "constant":       "",
-        "method":         "",
-        "struct":         "פּ",
-        "class":          "",
-        "interface":      "",
-        "text":           "",
-        "enum":           "",
-        "enumMember":     "",
-        "module":         "",
-        "color":          "",
-        "property":       "",
-        "field":          "\uf9be",
-        "unit":           "",
-        "event":          "鬒",
-        "file":           "",
-        "folder":         "",
-        "snippet":        "",
-        "typeParameter":  "",
-        "default":        ""
-    },
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.ruffPath": "ruff",
+  "python.linting.ruffArgs": ["--quiet"],
 
-    "diagnostic.errorSign":   "⛔️",
-    "diagnostic.warningSign": "🔸",
-    "diagnostic.infoSign":    "💬",
-    "diagnostic.hintSign":    "🔅",
+  "omnisharp.trace.server": "verbose",
+  "omnisharp.enableRoslynAnalyzers": true,
 
-    "diagnostic.level": "warning",
-    
-    "codeLens.enable": true,
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "/*.template.yaml"
+  },
 
-    "vetur.format.enable": true,
-	"vetur.format.options.tabSize": 4,
-	"vetur.format.options.useTabs": true,
-	"vetur.format.defaultFormatterOptions": {
-		"prettier": {
-			"singleQuote": true,
-			"semi": false,
-			"trailingComma": "es5"
-		}
-	},
-
-    "languageserver": {
-      "python": {
-        "command": "python",
-        "args": [
-          "-mpyls",
-          "-vv"
-        ],
-        "trace.server": "verbose",
-        "filetypes": [
-          "python"
-        ],
-        "settings": {
-          "pyls": {
-            "enable": true,
-            "trace": {
-              "server": "verbose"
-            },
-            "commandPath": "",
-            "configurationSources": [
-              "pycodestyle"
-            ],
-            "plugins": {
-              "jedi_completion": {
-                "enabled": true
-              },
-              "jedi_hover": {
-                "enabled": true
-              },
-              "jedi_references": {
-                "enabled": true
-              },
-              "jedi_signature_help": {
-                "enabled": true
-              },
-              "jedi_symbols": {
-                "enabled": true,
-                "all_scopes": true
-              },
-              "mccabe": {
-                "enabled": true,
-                "threshold": 15
-              },
-              "preload": {
-                "enabled": true
-              },
-              "pycodestyle": {
-                "enabled": true
-              },
-              "pydocstyle": {
-                "enabled": false,
-                "match": "(?!test_).*\\.py",
-                "matchDir": "[^\\.].*"
-              },
-              "pyflakes": {
-                "enabled": true
-              },
-              "rope_completion": {
-                "enabled": true
-              },
-              "yapf": {
-                "enabled": true
-              }
-            }
-          }
-        }
-      }
-    }
-
+  "diagnostic.displayByAle": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.enable": true,
+  "diagnostic.messageTarget": "float",
+  "diagnostic.virtualText": true
 }
-
-
