@@ -28,7 +28,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
-Plug 'github/copilot.vim'
+" Don't want this any more
+"Plug 'github/copilot.vim'
 
 Plug 'edouardp/myob-colorscheme'
 
@@ -304,8 +305,18 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 
 " -- vim_current_word --------------------------------------------------------
 "
-hi CurrentWordTwins guibg=#800080 gui=bold
-hi CurrentWord      guibg=#800080 gui=bold
+
+" Twins of word under cursor:
+let g:vim_current_word#highlight_twins = 1
+" The word under cursor:
+let g:vim_current_word#highlight_current_word = 1
+
+" Disable in NERDTree
+" Can also be a list, e.g. NERD_tree_*,your_buffer_name.rb,*.js
+autocmd BufAdd NERD_tree_* :let b:vim_current_word_disabled_in_this_buffer = 1
+
+hi CurrentWordTwins guibg=#800080 gui=bold ctermbg=61
+hi CurrentWord      guibg=#800080 gui=bold ctermbg=61
 
 
 " -- ALE --------------------------------------------------------------------
