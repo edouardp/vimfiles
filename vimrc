@@ -76,6 +76,11 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 Plug 'ryanoasis/vim-devicons'
 
 
+" Folding - custom fold text
+Plug 'edouardp/folde'
+let g:folde_style = 'simple'
+
+
 " Finish plugged
 call plug#end()
 
