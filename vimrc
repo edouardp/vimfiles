@@ -476,6 +476,41 @@ augroup FoldColumnAuto
 augroup END
 
 
+" Structural Python folding — call :PythonFold in a Python buffer to enable.
+" Folds start at the def/class/decorator line itself, and bracket-balance
+" tracking stops multi-line calls/strings from creating spurious folds.
+function! s:PythonFoldExpr(lnum) abort
+    let line = getline(a:lnum)
+    if line =~# '^\s*$'
+        return '='
+    endif
+    let ind = indent(a:lnum) / shiftwidth()
+    if line =~# '^\s*\(@\|def\>\|class\>\|async\s\+def\>\)'
+        return '>' . (ind + 1)
+    endif
+    let balance = 0
+    let l = a:lnum
+    let myind = indent(a:lnum)
+    while l > 1
+        let l -= 1
+        let s = substitute(getline(l), '#.*$', '', '')
+        let s = substitute(s, '"[^"]*"', '""', 'g')
+        let s = substitute(s, "'[^']*'", "''", 'g')
+        let balance += len(substitute(s, '[^{(\[]', '', 'g'))
+        let balance -= len(substitute(s, '[^})\]]', '', 'g'))
+        if s =~# '\\$' | let balance += 1 | endif
+        if getline(l) =~# '\S' && indent(l) < myind | break | endif
+    endwhile
+    if balance > 0 || line =~# '^\s*[)\]}]'
+        return '='
+    endif
+    return ind
+endfunction
+
+command! PythonFold setlocal foldmethod=expr foldexpr=<SID>PythonFoldExpr(v:lnum) | call <SID>UpdateFoldColumn()
+command! PythonFoldOff setlocal foldmethod=manual | execute 'normal! zE' | call <SID>UpdateFoldColumn()
+
+
 " -- vim-lsp Settings --
 "
 "let g:lsp_document_code_action_signs_hint = {'text': '✨'}
