@@ -442,6 +442,55 @@ set titlestring=Vim
 noremap K :!uvx frogmouth %<CR>
 
 
+" -- Folding -----------------------------------------------------------------
+"
+highlight Folded ctermbg=237 ctermfg=251 cterm=italic
+highlight FoldColumn ctermbg=237 ctermfg=251 cterm=None
+"set fillchars+=foldopen:-,foldclose:+,foldsep:\|
+"set fillchars+=foldopen:◇,foldclose:◆,foldsep:┊
+set fillchars+=foldopen:▼,foldclose:▶,foldsep:┊
+
+set foldopen=all
+set foldclose=all
+
+" Auto-show foldcolumn (2) when folds exist, hide (0) when none remain
+function! s:HasFolds() abort
+    let max = line('$') > 1000 ? 1000 : line('$')
+    for lnum in range(1, max)
+        if foldlevel(lnum) > 0
+            return 1
+        endif
+    endfor
+    if line('$') > 1000
+        for lnum in range(line('$') - 4, line('$'))
+            if foldlevel(lnum) > 0
+                return 1
+            endif
+        endfor
+    endif
+    return 0
+endfunction
+
+function! s:UpdateFoldColumn() abort
+    if s:HasFolds()
+        if &foldcolumn == 0
+            setlocal foldcolumn=2
+        endif
+    else
+        if &foldcolumn > 0
+            setlocal foldcolumn=0
+        endif
+    endif
+endfunction
+
+augroup FoldColumnAuto
+    autocmd!
+    autocmd BufReadPost,BufWritePost,InsertLeave,FileType * call s:UpdateFoldColumn()
+    autocmd VimEnter * call s:UpdateFoldColumn()
+    autocmd CursorHold * call s:UpdateFoldColumn()
+    autocmd OptionSet foldmethod call s:UpdateFoldColumn()
+augroup END
+
 
 " -- vim-lsp Settings --
 "
