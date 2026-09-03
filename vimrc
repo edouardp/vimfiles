@@ -406,10 +406,10 @@ autocmd FileType qf setlocal nowrap
 
 
 
-map [1;2B :cn<CR>
-map [1;2A :cprev<CR>
-map [1;3B :cn<CR>
-map [1;3A :cprev<CR>
+map <S-Down> :cn<CR>
+map <S-Up> :cprev<CR>
+map <M-Down> :cn<CR>
+map <M-Up> :cprev<CR>
 
 
 " -- Fix Unicode Widths on macOS
