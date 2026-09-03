@@ -244,6 +244,11 @@ set incsearch
 set updatetime=900
 
 
+if !empty($CMUX_WORKSPACE_ID)
+  set keyprotocol=
+  let &term = &term
+endif
+
 " Ctrl-P binding for FZF
 "
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --exclude .git --exclude .venv'
