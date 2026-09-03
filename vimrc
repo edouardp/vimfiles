@@ -223,7 +223,7 @@ set cmdheight=2
 
 " Insert current date (cmd-/)
 inoremap <D-/> <C-R>=strftime("%Y/%m/%d: ")<CR>
-inoremap ¯ <C-R>=strftime("%Y/%m/%d: ")<CR>
+inoremap <T-/> <C-R>=strftime("%Y/%m/%d: ")<CR>
 
 " Insert current time (cmd-option-/)
 inoremap <D-¿> <C-R>=strftime("%+")<CR>
@@ -383,13 +383,13 @@ vnoremap <ScrollWheelUp>   <C-Y>
 vnoremap <ScrollWheelDown> <C-E>
 
 " Save in any mode
-nnoremap ó :w<CR>
-xnoremap ó :<C-U>w<CR>gv
-snoremap ó <C-G>:<C-U>w<CR>gv
-inoremap ó <C-O>:w<CR>
+nnoremap <T-s> :w<CR>
+xnoremap <T-s> :<C-U>w<CR>gv
+snoremap <T-s> <C-G>:<C-U>w<CR>gv
+inoremap <T-s> <C-O>:w<CR>
 
 " Copy to system buffer in visual mode
-vnoremap ã "*y
+vnoremap <T-c> "*y
 
 
 highlight GitGutterAdd          ctermfg=10     ctermbg=237 guifg=Green  guibg=#2e3e4f
