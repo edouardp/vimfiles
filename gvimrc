@@ -36,15 +36,4 @@ map <D-Bar> :botright terminal ++close ++rows=12<CR>
 set guifont=DejaVuSansMNFM:h14
 
 
-" Set the colorscheme
-"
-colorscheme myob
-set background=dark
-
-
-" set vertical fillchar color to white in gui
-" 
-highlight VertSplit ctermfg=white ctermbg=black cterm=NONE
-
-
 

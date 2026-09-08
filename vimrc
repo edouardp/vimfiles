@@ -31,8 +31,6 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " Don't want this any more
 "Plug 'github/copilot.vim'
 
-Plug 'edouardp/myob-colorscheme'
-
 Plug 'edouardp/vim-q-connect'
 
 Plug 'tpope/vim-fugitive'
@@ -358,7 +356,9 @@ command! -bang -nargs=* GGrep
 "
 
 " Start Obsession when opening the specific file ~/notes
-autocmd BufReadPost ~/notes Obsession
+" Store the session at a fixed path so it doesn't litter the cwd (which is
+" wherever vim happened to be launched from).
+autocmd BufReadPost ~/notes Obsession ~/.vim/session/notes.vim
 
 " Start Obsession when editing any file under ~/myob/
 autocmd BufReadPost * if expand('%:p') =~# '^' . expand('~/myob/') | Obsession | endif
