@@ -387,7 +387,20 @@ xnoremap <T-s> :<C-U>w<CR>gv
 snoremap <T-s> <C-G>:<C-U>w<CR>gv
 inoremap <T-s> <C-O>:w<CR>
 
-" Copy to system buffer in visual mode
+" Copy to system buffer in visual mode.
+"
+" NOTE (cmux): this mapping relies on the kitty keyboard protocol so that
+" <T-c> arrives as CSI-u. cmux 0.64.22+ added consumeUnavailableCopyMenuAction()
+" (PR manaflow-ai/cmux#8895), which swallows Cmd+C whenever the terminal has no
+" native selection -- i.e. exactly when Vim visual mode wants it -- so the key
+" never reaches Vim. Tracked in manaflow-ai/cmux#11228; fix PR is
+" manaflow-ai/cmux#11314 (still open as of cmux 0.64.25).
+"
+" Workaround: `keybind = super+c=unbind` in
+"   ~/Library/Application Support/com.cmuxterm.app/config.ghostty
+" That drops super+c from Ghostty's binding set, so cmux's shim declines and the
+" chord is forwarded to the PTY. Native mouse-selection copy still works via
+" Edit > Copy. Delete the workaround once manaflow-ai/cmux#11314 ships.
 vnoremap <T-c> "*y
 
 
